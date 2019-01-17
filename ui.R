@@ -1,8 +1,7 @@
-
-fluidPage(
-  
-  # App title ----
-  titlePanel("More Widgets"),
+library(markdown) 
+shinyUI(
+navbarPage("More Widgets",
+  tabPanel("Data",
   
   # Sidebar layout with input and output definitions ----
   sidebarLayout(
@@ -41,8 +40,15 @@ fluidPage(
       # Output: Header + table of distribution ----
       h4("Observations"),
       tableOutput("view")
+      
     )
     
-  )
-)
+  ))
+  
+,tabPanel("Help File",
+          mainPanel(
+            includeMarkdown('about.md')
+          )
+)  
+))
 
